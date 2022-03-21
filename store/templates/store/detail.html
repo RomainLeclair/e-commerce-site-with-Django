@@ -9,4 +9,7 @@
     <p>{{ product.description }}</p>
     <p>{{ product.stock }} en stokc</p>
 
-{% endblock %}
+    {% if user.is_authenticated %}
+    <p><a href="{% url 'add-to-cart' product.slug %}"> Add article to cart</a></p>
+    {% endif %}
+    {% endblock %}
